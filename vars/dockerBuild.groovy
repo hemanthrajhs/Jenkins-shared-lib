@@ -1,8 +1,7 @@
-def call(String projects,String ImageTag, String hubUSER){
+def call(String projects, String ImageTag, String hubUSER) {
     sh """
-    Docker bulid -t ${hubUSER}/${projects} .
-    Docker tag ${hubUSER}/${projects} ${hubUSER}/${projects}:{ImageTag}
-    Docker tag ${hubUSER}/${projects} ${hubUSER}/${projects}:latest
-    
+    docker build -t ${hubUSER}/${projects} .
+    docker tag ${hubUSER}/${projects} ${hubUSER}/${projects}:${ImageTag}
+    docker tag ${hubUSER}/${projects} ${hubUSER}/${projects}:latest
     """
 }
