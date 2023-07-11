@@ -4,9 +4,9 @@
 //     cat scan.txt
 //     """
 // }
-def call(String appname, String region, String aws-account-id) {
+def call(String appname, String region, String aws_account_id) {
      sh """
-     trivy image ${aws-account-id}.dkr.ecr.${region}.amazonaws.com/${appname}:latest
+     trivy image ${aws_account_id}.dkr.ecr.${region}.amazonaws.com/${appname}:latest
      cat scan.txt
      """
 }
